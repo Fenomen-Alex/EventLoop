@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Geometric Balance Palette */
+  --color-background: #020617; /* slate-950 */
+  --color-on-background: #cbd5e1; /* slate-300 */
+  
+  --color-surface: #0f172a; /* slate-900 */
+  --color-surface-dim: #020617; /* slate-950 */
+  --color-surface-bright: #1e293b; /* slate-800 */
+  --color-surface-container-lowest: #020617;
+  --color-surface-container-low: #0a0f1e;
+  --color-surface-container: #0f172a;
+  --color-surface-container-high: #1e293b;
+  --color-surface-container-highest: #334155;
+  --color-surface-variant: #1e293b;
+  
+  --color-on-surface: #f1f5f9; /* slate-100 */
+  --color-on-surface-variant: #64748b; /* slate-500 */
+  --color-inverse-surface: #f1f5f9;
+  --color-inverse-on-surface: #0f172a;
+  
+  --color-outline: #334155; /* slate-700 */
+  --color-outline-variant: #1e293b; /* slate-800 */
+  
+  --color-primary: #facc15; /* yellow-400 */
+  --color-on-primary: #020617; /* slate-950 */
+  --color-primary-container: #422006; /* custom yellow-900 range */
+  --color-on-primary-container: #fef08a; /* yellow-200 */
+  
+  --color-secondary: #f97316; /* orange-500 */
+  --color-on-secondary: #020617;
+  
+  --color-tertiary: #a855f7; /* purple-500 */
+  --color-on-tertiary: #ffffff;
+
+  --color-emerald: #10b981;
+  --color-cyan: #06b6d4;
+  --color-blue: #3b82f6;
+  --color-orange: #f97316;
+  
+  --color-error: #ef4444; /* red-500 */
+  --color-on-error: #ffffff;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface/50 backdrop-blur-xl border border-outline/50 rounded-xl shadow-xl;
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 20px -5px rgba(250, 204, 21, 0.2);
+  }
+  
+  .glow-secondary {
+    box-shadow: 0 0 20px -5px rgba(249, 115, 22, 0.2);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.2);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.2);
+  }
+  
+  .marching-ants {
+    background-image: linear-gradient(to right, rgba(250, 204, 21, 0.3) 50%, transparent 50%);
+    background-size: 10px 100%;
+    animation: march 1s linear infinite;
+  }
+}
+
+@keyframes march {
+  0% { background-position: 0 0; }
+  100% { background-position: 10px 0; }
+}
+
+body {
+  @apply bg-background text-on-background font-sans;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-outline/50 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-on-surface-variant;
+}
+

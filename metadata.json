@@ -1,0 +1,6 @@
+{
+  "name": "LoopEngine",
+  "description": "An interactive learning resource for developers to visualize the JavaScript event loop, including Browser and Node.js environments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
